@@ -8,61 +8,72 @@
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-
-    <!-- Container Flexbox com tudo no centro e margem 0-->
     <div class="BG vh-100">
+        <div class="overlay vh-100">
 
-        <div class="overlay d-flex justify-content-center align-items-center">
-            <!-- Caixinha de cadastro -->
-            <div id="loginbox" class="col-6 col-lg-3 bg-white text-dark shadow rounded-4 p-4">
-                
-                <!-- "mb" se refere a margem inferior -->
-                <div class="mb-4">
-                    <h3 class="text-center">Cadastrar conta</h3>
+            <nav class="navbar navbar-dark fixed-top">
+                <div class="container-fluid px-5">
+                    <a class="navbar-brand" href="home.html">
+                        <i class="bi-house-fill"></i> Início
+                    </a>
                 </div>
+            </nav>
 
-                <!-- Usuario -->
-                <div class="mb-3">
-                    <input type="text" id="usuario" class="form-control" placeholder="Usuário">
-                </div>
+        
+            <div class="container d-flex justify-content-center align-items-center vh-100">
+                <!-- Caixinha de cadastro -->
+                <div class="card p-4 w-100 mw-400px">
+                    
+                    <!-- "mb" se refere a margem inferior -->
+                    <div class="mb-4">
+                        <h3 class="text-center">Cadastrar conta</h3>
+                    </div>
 
-                <!-- Senha -->
-                <div class="mb-3">
-                    <input type="password" id="senhaA" class="form-control" placeholder="Senha">
-                </div>
+                    <!-- Usuario -->
+                    <div class="mb-3">
+                        <input type="text" id="usuario" class="form-control" placeholder="Usuário">
+                    </div>
 
-                <!-- Confirmar senha -->
-                <div class="mb-3">
-                    <input type="password" id="senhaB" class="form-control" placeholder="Confirmar Senha">
-                </div>
+                    <!-- Senha -->
+                    <div class="mb-3">
+                        <input type="password" id="senhaA" class="form-control" placeholder="Senha">
+                    </div>
 
-                <!-- Botão de Cadastro -->
-                <div class="d-flex justify-content-center mb-3">
-                    <button type="button" class="btn btn-success" id="cadastrar">Cadastrar</button>
-                </div>
+                    <!-- Confirmar senha -->
+                    <div class="mb-3">
+                        <input type="password" id="senhaB" class="form-control" placeholder="Confirmar Senha">
+                    </div>
 
-                <!-- Display de validação -->
-                <ul class="list-unstyled fst-italic">
-                    <li id="display1" class="text-secondary">
-                        <i id="ic1" class="bi-dash-circle-fill"></i> Disponibilidade do nome de usuário
-                    </li>
+                    <!-- Botão de Cadastro -->
+                    <div class="d-flex justify-content-center mb-3">
+                        <button type="button" class="btn btn-success col-12" id="cadastrar">Cadastrar</button>
+                    </div>
 
-                    <li id="display2" class="text-secondary">
-                        <i id="ic2" class="bi-dash-circle-fill"></i> Senhas conferem
-                    </li>
+                    <!-- Display de validação -->
+                    <div class="container bg-light-gray rounded-3 pt-3 mb-3 d-flex justify-content-center">
+                        <ul class="list-unstyled fst-italic">
+                            <li id="display1" class="text-secondary">
+                                <i id="ic1" class="bi-dash-circle-fill"></i> Disponibilidade do nome de usuário
+                            </li>
 
-                    <li id="display3" class="text-secondary">
-                        <i id="ic3" class="bi-dash-circle-fill"></i> Usuário com mínimo de 4 caracteres
-                    </li>
+                            <li id="display2" class="text-secondary">
+                                <i id="ic2" class="bi-dash-circle-fill"></i> Senhas conferem
+                            </li>
 
-                    <li id="display4" class="text-secondary">
-                        <i id="ic4" class="bi-dash-circle-fill"></i> Senha com mínimo de 6 caracteres
-                    </li>
-                </ul>
+                            <li id="display3" class="text-secondary">
+                                <i id="ic3" class="bi-dash-circle-fill"></i> Usuário com mínimo de 4 caracteres
+                            </li>
 
-                <!-- Ir para o Login-->
-                <div class="text-center">
-                    <p>Já possui conta? <a href="login.html" class="text-primary">Fazer login</a></p>
+                            <li id="display4" class="text-secondary">
+                                <i id="ic4" class="bi-dash-circle-fill"></i> Senha com mínimo de 6 caracteres
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Ir para o Login-->
+                    <div class="text-center">
+                        <p>Já possui conta? <a href="login.html" class="text-primary">Fazer login</a></p>
+                    </div>
                 </div>
             </div>
         </div>

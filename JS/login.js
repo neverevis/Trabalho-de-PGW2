@@ -61,4 +61,25 @@ function login()
     }
 }
 
+function exibir()
+{
+    let botao = document.getElementById('exibirSenha');
+    let olho = document.getElementById('olho');
+    let senha = document.getElementById('senha');
+
+    if(botao.className == 'btn btn-outline-default')
+    {
+        senha.setAttribute('type','text');
+        botao.setAttribute('class','btn btn-dark')
+        olho.setAttribute('class', 'bi-eye-fill')
+    }
+    else
+    {
+        senha.setAttribute('type','password');
+        botao.setAttribute('class','btn btn-outline-default')
+        olho.setAttribute('class', 'bi-eye-slash-fill')
+    }
+}
+
 document.getElementById("entrar").addEventListener('click', login);
+document.getElementById("exibirSenha").addEventListener('click', exibir)
