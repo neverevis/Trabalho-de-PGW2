@@ -12,13 +12,38 @@
     
         <div class="overlay">
 
-            <nav class="navbar navbar-dark fixed-top">
-                <div class="container-fluid px-5">
-                    <a class="navbar-brand" href="home.html">
-                        <i class="bi-house-fill"></i> Início
-                    </a>
+            <nav class="navbar navbar-dark bg-dark position-fixed w-100 navbar-expand-lg">
+                <div class="container">
+                  <a class="navbar-brand text-white" href="home.html">PortalFilmes</a>
+        
+                  <!--Botão de expandir (quando colapsar)-->
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="bi-list text-white"></i>
+                  </button>
+        
+                  <!-- Compatibilidade com colapso para telas pequenas-->
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        
+                    <!--Itens de navegação-->
+                    <li class="nav-item">
+                        <a class="nav-link deslogado" href="#">Fazer Logout</a>
+                    </li>
+        
+                    <li class="nav-item">
+                        <a class="nav-link deslogado" href="cadastro.html">Cadastrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link deslogado" href="login.html">Fazer login</a>
+                    </li>
+        
+                    </ul>
+        
+                  </div>
+        
                 </div>
-            </nav>
+              </nav>
 
             <div class="container vh-100 d-flex justify-content-center align-items-center">
                 <!-- Caixinha do login -->
