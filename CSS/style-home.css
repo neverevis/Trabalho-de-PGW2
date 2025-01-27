@@ -3,3 +3,8 @@
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(2px);
 }
+
+.bg-gradient-dark
+{
+    background-image: linear-gradient(rgb(26, 26, 26), rgb(24, 24, 24));
+}

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="CSS/style-home.css">
     <title>Home</title>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100 bg-gradient-dark">
 
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
         <div class="container">
@@ -23,11 +23,20 @@
           <!-- Compatibilidade com colapso para telas pequenas-->
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Categorias</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="listaNav">
 
             <!--Itens de navegação-->
             <li class="nav-item">
-                <a class="nav-link deslogado" href="#">Fazer Logout</a>
+                <a class="nav-link logado" href="#">Fazer Logout</a>
             </li>
 
             <li class="nav-item">
@@ -44,86 +53,82 @@
         </div>
       </nav>
 
-    <main class="container mt-3">
-        <div class="row d-flex justify-content-center">
-            <div class="col-10 col-lg-4 offset-lg-2">
-                <input class="form-control" type="text" placeholder="Pesquisar">
+    <main class="container-fluid mt-3">
+        <!--Aba de ferramentas-->
+        <section class="row d-flex justify-content-center">
+            <div class="col-9 col-lg-4 offset-lg-2">
+                <input id="pesquisa" class="form-control" type="text" placeholder="Pesquisar">
             </div>
 
             <div class="col-2">
-                <button class="btn btn-success"><i class="bi-plus-lg"></i></button>
+                <button id="btnAdicionar" class="btn btn-success"><i class="bi-plus-lg"></i></button>
             </div>
-        </div>
+        </section>
+
+        <section class="container-fluid mt-4">
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5" id="catalogo">
+
+                <div class="col mb-3 p-1">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="https://images.bauerhosting.com/empire/2024/04/Moana-2.jpg?ar=16%3A9&fit=crop&crop=top&auto=format&w=1440&q=80">                        </div>
+                    </a>
+                </div>
+
+                <div class="col mb-3 p-1">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="https://wallpapersmug.com/download/1600x900/59f999/the-flash-dc-movie-poster-batman-supergirl.jpg">                        </div>
+                    </a>
+                </div>
+                <div class="col mb-3 p-1">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="https://wallpapersmug.com/download/1600x900/e5a909/star-wars-the-last-jedi-2017-movie-poster-red.jpg">                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </section>
     </main>
 
-    <footer>
-        footer
+    <footer class="bg-dark text-white mt-auto d-flex align-items-center">
+
+            <p>© 2024 Trabalho de PGW2</p>
+
     </footer>
 
-    <!--Modal de registro de filmes-->
-    <div id="modal-registro" class="bg-modal position-fixed start-0 top-0 w-100 h-100 d-flex justify-content-center align-items-center">
-        <div class="container-flex bg-white rounded-3 p-4">
-            <h3 class="text-center">Registrar filme</h3>
+    <!--Modal para registrar filme-->
+    <div id="modal-registro" class="d-none bg-modal position-fixed start-0 top-0 w-100 h-100 d-flex justify-content-center align-items-center">
+        <div class="container-flex bg-white rounded-3 p-4 position-relative">
 
-            <!--Título-->
+            <button onclick="fecharModalReg()" id="btnFecharReg" class="btn-close btn-sm position-absolute end-0 top-0 me-2 mt-2"></button>
+
+            <h3 class="text-center">Registrar filme</h3>
             <div class="row mt-5 d-flex align-items-center">
-                <div class="col-3">
+                <div class="col-12">
                     <label class="form-label" for="text">Título</label>
                 </div>
-                <div class="col-8">
-                    <input class="form-control" type="text">
+                <div class="col-12">
+                    <input id="titulo" class="form-control" type="text">
                 </div>
             </div>
-
-            <!--Título-->
             <div class="row mt-4 d-flex align-items-center">
-                <div class="col-3">
-                    <label class="form-label" for="text">Imagem</label>
+                <div class="col-12">
+                    <label class="form-label" for="text">Link da imagem</label>
                 </div>
-                <div class="col-8">
-                    <input class="form-control" type="text">
+                <div class="col-12">
+                    <input id="imagem" class="form-control" type="text" placeholder="Escala Recomendada 16:9">
                 </div>
             </div>
 
             <div class="row mt-5 d-flex justify-content-center">
-                <button class="col-9 btn btn-primary">Adicionar</button>
-            </div>
-            
+                <button id="btnModalAdd" class="col-9 btn btn-primary">Adicionar</button>
+            </div>  
         </div>
     </div>
 
-    <!--Modal de confirmação de exclusão-->
-    <div id="modal-registro" class="bg-modal position-fixed start-0 top-0 w-100 h-100 d-flex justify-content-center align-items-center">
-        <div class="container-flex bg-white rounded-3 p-4">
-            <h3 class="text-center">Registrar filme</h3>
-
-            <!--Título-->
-            <div class="row mt-5 d-flex align-items-center">
-                <div class="col-3">
-                    <label class="form-label" for="text">Título</label>
-                </div>
-                <div class="col-8">
-                    <input class="form-control" type="text">
-                </div>
-            </div>
-
-            <!--Título-->
-            <div class="row mt-4 d-flex align-items-center">
-                <div class="col-3">
-                    <label class="form-label" for="text">Imagem</label>
-                </div>
-                <div class="col-8">
-                    <input class="form-control" type="text">
-                </div>
-            </div>
-
-            <div class="row mt-5 d-flex justify-content-center">
-                <button class="col-9 btn btn-primary">Adicionar</button>
-            </div>
-            
-        </div>
-    </div>
-
+    <script src="JS/home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

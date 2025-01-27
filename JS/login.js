@@ -30,7 +30,7 @@ function login()
                     {
                         x.login = true;
                         localStorage.setItem("Contas", JSON.stringify(Contas));
-                        console.log("Sucesso no login!")
+                        window.location.href = "home.html";
                         return;
                     }
                     else if(senha != '')
