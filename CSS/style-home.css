@@ -8,3 +8,29 @@
 {
     background-image: linear-gradient(rgb(26, 26, 26), rgb(24, 24, 24));
 }
+
+.zoomhover
+{
+    transition: all .3s;
+}
+.zoomhover:hover
+{
+    transform: scale(1.04);
+}
+
+.perfilDropdown
+{
+    overflow: hidden;
+    border-radius: 6px;
+    padding: 6px;
+    transition: all .3s;
+}
+
+.hide
+{
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 0;
+    padding-bottom: 0;
+    max-height: 0px;
+}

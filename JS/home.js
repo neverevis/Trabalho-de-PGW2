@@ -46,12 +46,17 @@ else
 {
     document.getElementById('listaNav').innerHTML =
     `<li class="nav-item text-white my-auto me-3">
-        <p class="m-0">Bem vindo ${ContaLogada.usuario}!</p>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link deslogado" href="cadastro.html">Fazer Logout</a>
+        <button id="btnPerfil" class="btn btn-dark"><i class="bi-person-circle"></i></button>
+        <div id="perfilDropdown" class="perfilDropdown hide position-fixed bg-secondary text-center">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="text-decoration-none text-white" href="#"><i class='bi-box-arrow-left'></i>Sair</a></li>
+            </ul>
+        </div>
     </li>`
 }
+
+//cria um ponteiro ao botão de perfil
+let perfil = document.getElementById('btnPerfil');
 
 //inicializa o catalogo de filmes
 atualizarCatalogo(Filmes)
@@ -96,10 +101,14 @@ function atualizarCatalogo(lista)
     for(filme of lista)
     {
         catalogo.innerHTML += 
-        `<div class="col mb-1 p-2">
+        `<div class="col mb-1 p-2 zoomhover">
             <a href="#" class="text-decoration-none">
-                <div class="card h-100">
-                <img class="card-img-top" src='${filme.imagem}'>
+                <div class="card h-100 bg-dark">
+                <img class="card-img-top" src='${filme.imagem}.perfilDropdown
+                {
+                    
+                }
+                '>
             </a>
         </div>`
     }
@@ -133,7 +142,13 @@ function filtrar()
     atualizarCatalogo(filtrado);
 }
 
+function dropdownPerfil()
+{
+    document.getElementById('perfilDropdown').classList.toggle('hide');
+}
+
 //eventos
 btnAdicionar.addEventListener("click",modalNovoFilme);
 btnModalAdd.addEventListener("click",adicionar);
 pesquisa.addEventListener('input',filtrar)
+btnPerfil.addEventListener('click',dropdownPerfil);
