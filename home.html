@@ -20,10 +20,13 @@
             <i class="bi-list text-white"></i>
           </button>
 
+          <div class="navbar-nav me-0" id="listaNavSemColapso">
+
+          </div>
+
           <!-- Compatibilidade com colapso para telas pequenas-->
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            <ul class="navbar-nav ms-0">
+            <ul class="navbar-nav ms-100">
                 <li class="nav-item">
                     <a class="nav-link" href="">Sobre</a>
                 </li>
@@ -31,23 +34,8 @@
                     <a class="nav-link" href="">Categorias</a>
                 </li>
             </ul>
-
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="listaNav">
-
-            <!--Itens de navegação-->
-            <li class="nav-item">
-                <a class="nav-link logado" href="#">Fazer Logout</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link deslogado" href="cadastro.html">Cadastrar</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link deslogado" href="login.html">Fazer login</a>
-            </li>
-
             </ul>
-
           </div>
 
         </div>
@@ -104,16 +92,77 @@
             </div>
             <div class="row mt-4 d-flex align-items-center">
                 <div class="col-12">
+                    <label class="form-label" for="text">Categoria</label>
+                </div>
+                <div class="col-12">
+                    <select id="categoria" class="form-control">
+                        <option value="" selected disabled>Escolha uma Categoria...</option>
+                        <option value="Ação">Ação</option>
+                        <option value="Aventura">Aventura</option>
+                        <option value="Animação">Animação</option>
+                        <option value="Comédia">Comédia</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Terror">Terror</option>
+                        <option value="Sci-fi">Sci-fi</option>
+                        <option value="Suspense">Suspense</option>
+                        <option value="Mistério">Mistério</option>
+                        <option value="Infantil">Infantil</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mt-4 d-flex align-items-center">
+                <div class="col-12">
+                    <label class="form-label" for="text">Sinopse</label>
+                </div>
+                <div class="col-12">
+                    <input id="sinopse" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="row mt-4 d-flex align-items-center">
+                <div class="col-12">
                     <label class="form-label" for="text">Link da imagem</label>
                 </div>
                 <div class="col-12">
                     <input id="imagem" class="form-control" type="text" placeholder="Escala Recomendada 16:9">
                 </div>
             </div>
+            <div class="row mt-4 d-flex align-items-center">
+                <div class="col-12">
+                    <label class="form-label" for="text">Duração do Filme</label>
+                </div>
+                <div class="col-12">
+                    <input id="duracao" class="form-control" type="text" placeholder="HH:MM">
+                </div>
+            </div>
 
-            <div class="row mt-5 d-flex justify-content-center">
+            <p class="text-danger text-center mt-3 d-none" id="mensagem">Preencha todos os campos!</p>
+
+            <div class="row mt-3 d-flex justify-content-center">
                 <button id="btnModalAdd" class="col-9 btn btn-primary">Adicionar</button>
             </div>  
+        </div>
+    </div>
+
+    <!--Modal do filme -->
+    <div id="modal-filme" class="bg-modal position-fixed start-0 top-0 w-100 h-100 d-flex justify-content-center align-items-center d-none">
+
+    </div>
+
+    <!--Modal de exclusão -->
+    <div id="modal-excluir" class="bg-modal position-fixed start-0 top-0 w-100 h-100 d-flex justify-content-center align-items-center d-none">
+        <div class="container-flex p-4 rounded-3 bg-dark text-white">
+            <div class="row mb-3">
+                <h5>Deseja mesmo excluir este item?</h5>
+            </div>
+            <div class="row d-flex justify-content-center" id="btnConfirmar">
+                <div class="col-3">
+                    <button class="btn btn-success">Sim</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-danger">Não</button>
+                </div>
+            </div>
         </div>
     </div>
 

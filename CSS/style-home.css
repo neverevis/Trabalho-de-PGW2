@@ -21,16 +21,76 @@
 .perfilDropdown
 {
     overflow: hidden;
-    border-radius: 6px;
-    padding: 6px;
+    border-radius: 10px;
+    padding: 10px;
     transition: all .3s;
+}
+
+.perfilDropdown ul li a:hover
+{
+    color: bisque;
 }
 
 .hide
 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-top: 0;
     padding-bottom: 0;
     max-height: 0px;
+}
+
+.bg-gray
+{
+    background-color: rgb(49, 49, 49);
+}
+
+.modal-filme-size
+{
+    width: 60vw;
+    height: 95%;
+}
+
+.max-tamanho-modal
+{
+    max-width: 800px;
+    max-height: 800px;
+}
+
+.max-tamanho-modal2
+{
+    max-width: 600px;
+    max-height: 800px;
+}
+
+.modal-body 
+{
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.modal-body::-webkit-scrollbar
+{
+    display: none;
+}
+
+.textopequeno
+{
+    font-size: 0.9rem;
+}
+
+.bg-escuro
+{
+    background-color: #1a1a1a;
+}
+
+.bg-escuro-plus
+{
+    background-color: #131313;
+}
+
+.justificado
+{
+    text-align: justify;
+    text-justify: inter-word;
 }
